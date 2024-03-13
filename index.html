@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PFJS - Repositório</title>
+    <link rel="shortcut icon"
+        href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="containerMenu">
+            <div class="img">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg"
+                    width="150px" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg"
+                    width="150px" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                    width="150px" />
+            </div>
+
+            <div class="info">
+                <p>Instituto Federal do Triângulo Mineiro - IFTM</p>
+                <p>Disciplina - Projeto Front-End Web Javascript - 3º Semestre</p>
+                <p>Prof. - Wilton Filho</p>
+                <p>Aluno - Olavo Dias Nunes</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h1>REPOSITÓRIO DA DISCIPLINA</h1>
+        <ul>
+            <li><a href="Listas/index.html" target="_blank">LISTAS</a></li>
+        </ul>
+    </main>
+
+    <footer>
+        <section>
+            <div>
+                <img src="img/iftm.jpeg" alt="" width="200">
+            </div>
+
+            <div>
+                <p>Projeto Front-End Web Javascript</p>
+                <p>Todos os direitos reservados. ©</p>
+            </div>
+
+            <div class="local">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.9677130102773!2d-48.28264532390217!3d-18.932823208035003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94a444e28f2d7a11%3A0x8fa16020966235f9!2sIFTM%20-%20Campus%20Uberl%C3%A2ndia%20Centro%20(Zona%20Sul)!5e0!3m2!1spt-BR!2sbr!4v1688782065198!5m2!1spt-BR!2sbr"
+                    width="500" height="150" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                <p>Endereço: Rua Blanche Galassi, 150 - Altamira, Uberlândia - MG, 38411-104</p>
+            </div>
+        </section>
+    </footer>
+
+    <script>
+        // Definindo a função de soma de idades usando arrow function
+        const somarIdades = (idades) => {
+            let soma = 0;
+            // Loop para percorrer o vetor de idades e somá-las
+            for (let i = 0; i < idades.length; i++) {
+                soma += idades[i];
+            }
+            return soma; // Retorna a soma total
+        }
+
+        // Vetor de idades
+        const idades = [10, 21, 31, 40];
+
+        // Exibindo o resultado na página
+        document.getElementById('resultados').innerHTML += `<p>Soma das idades = ${somarIdades(idades)}</p>`;
+
+        // a) Média aritmética
+        const media = (idades) => {
+            const soma = idades.reduce((total, idade) => total + idade, 0);
+            return soma / idades.length;
+        };
+        document.getElementById('resultados').innerHTML += `<p>Média das idades: ${media(idades)}</p>`;
+
+        // b) Maior idade
+        const maiorIdade = (idades) => Math.max(...idades);
+        document.getElementById('resultados').innerHTML += `<p>Maior idade: ${maiorIdade(idades)}</p>`;
+
+        // c) Idades ímpares
+        const idadesImpares = (idades) => idades.filter(idade => idade % 2 !== 0);
+        document.getElementById('resultados').innerHTML += `<p>Idades ímpares: ${idadesImpares(idades)}</p>`;
+
+        // d) Verificar se todos são maiores de idade (idade >= 18)
+        const todosMaioresIdade = (idades) => idades.every(idade => idade >= 18);
+        document.getElementById('resultados').innerHTML += `<p>Todos são maiores de idade: ${todosMaioresIdade(idades)}</p>`;
+
+        // Função para converter a entrada do usuário em um número
+        const obterIdadeDoUsuario = (mensagem) => {
+            return parseInt(prompt(mensagem));
+        };
+
+        // e) Verificar se todas as idades são maiores ou iguais a um valor informado pelo usuário
+        const valorLimiteE = obterIdadeDoUsuario("Digite um valor limite para verificar se todas as idades são maiores ou iguais a ele:");
+        const todasMaioresQue = (idades, valor) => idades.every(idade => idade >= valor);
+        document.getElementById('resultados').innerHTML += `<p>Todas as idades são maiores ou iguais a ${valorLimiteE}: ${todasMaioresQue(idades, valorLimiteE)}</p>`;
+
+        // f) Exibir todas as idades maiores ou iguais a determinada idade
+        const idadeParaFiltrarF = obterIdadeDoUsuario("Digite uma idade para filtrar as idades maiores ou iguais a ela:");
+        const maioresOuIguais = (idades, valor) => idades.filter(idade => idade >= valor);
+        document.getElementById('resultados').innerHTML += `<p>Idades maiores ou iguais a ${idadeParaFiltrarF}: ${maioresOuIguais(idades, idadeParaFiltrarF)}</p>`;
+
+        // g) A média das idades das pessoas com idades maiores ou iguais a determinada idade
+        const idadeParaMediaG = obterIdadeDoUsuario("Digite uma idade para calcular a média das idades maiores ou iguais a ela:");
+        const mediaMaioresOuIguais = (idades, valor) => {
+            const maiores = maioresOuIguais(idades, valor);
+            return media(maiores);
+        };
+        document.getElementById('resultados').innerHTML += `<p>Média das idades maiores ou iguais a ${idadeParaMediaG}: ${mediaMaioresOuIguais(idades, idadeParaMediaG)}</p>`;
+    </script>
+</body>
+
+</html>
