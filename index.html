@@ -64,66 +64,6 @@
             </div>
         </section>
     </footer>
-
-    <script>
-        // Definindo a função de soma de idades usando arrow function
-        const somarIdades = (idades) => {
-            let soma = 0;
-            // Loop para percorrer o vetor de idades e somá-las
-            for (let i = 0; i < idades.length; i++) {
-                soma += idades[i];
-            }
-            return soma; // Retorna a soma total
-        }
-
-        // Vetor de idades
-        const idades = [10, 21, 31, 40];
-
-        // Exibindo o resultado na página
-        document.getElementById('resultados').innerHTML += `<p>Soma das idades = ${somarIdades(idades)}</p>`;
-
-        // a) Média aritmética
-        const media = (idades) => {
-            const soma = idades.reduce((total, idade) => total + idade, 0);
-            return soma / idades.length;
-        };
-        document.getElementById('resultados').innerHTML += `<p>Média das idades: ${media(idades)}</p>`;
-
-        // b) Maior idade
-        const maiorIdade = (idades) => Math.max(...idades);
-        document.getElementById('resultados').innerHTML += `<p>Maior idade: ${maiorIdade(idades)}</p>`;
-
-        // c) Idades ímpares
-        const idadesImpares = (idades) => idades.filter(idade => idade % 2 !== 0);
-        document.getElementById('resultados').innerHTML += `<p>Idades ímpares: ${idadesImpares(idades)}</p>`;
-
-        // d) Verificar se todos são maiores de idade (idade >= 18)
-        const todosMaioresIdade = (idades) => idades.every(idade => idade >= 18);
-        document.getElementById('resultados').innerHTML += `<p>Todos são maiores de idade: ${todosMaioresIdade(idades)}</p>`;
-
-        // Função para converter a entrada do usuário em um número
-        const obterIdadeDoUsuario = (mensagem) => {
-            return parseInt(prompt(mensagem));
-        };
-
-        // e) Verificar se todas as idades são maiores ou iguais a um valor informado pelo usuário
-        const valorLimiteE = obterIdadeDoUsuario("Digite um valor limite para verificar se todas as idades são maiores ou iguais a ele:");
-        const todasMaioresQue = (idades, valor) => idades.every(idade => idade >= valor);
-        document.getElementById('resultados').innerHTML += `<p>Todas as idades são maiores ou iguais a ${valorLimiteE}: ${todasMaioresQue(idades, valorLimiteE)}</p>`;
-
-        // f) Exibir todas as idades maiores ou iguais a determinada idade
-        const idadeParaFiltrarF = obterIdadeDoUsuario("Digite uma idade para filtrar as idades maiores ou iguais a ela:");
-        const maioresOuIguais = (idades, valor) => idades.filter(idade => idade >= valor);
-        document.getElementById('resultados').innerHTML += `<p>Idades maiores ou iguais a ${idadeParaFiltrarF}: ${maioresOuIguais(idades, idadeParaFiltrarF)}</p>`;
-
-        // g) A média das idades das pessoas com idades maiores ou iguais a determinada idade
-        const idadeParaMediaG = obterIdadeDoUsuario("Digite uma idade para calcular a média das idades maiores ou iguais a ela:");
-        const mediaMaioresOuIguais = (idades, valor) => {
-            const maiores = maioresOuIguais(idades, valor);
-            return media(maiores);
-        };
-        document.getElementById('resultados').innerHTML += `<p>Média das idades maiores ou iguais a ${idadeParaMediaG}: ${mediaMaioresOuIguais(idades, idadeParaMediaG)}</p>`;
-    </script>
 </body>
 
 </html>
