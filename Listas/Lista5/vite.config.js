@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/projetoFrontEndWebJavascript/Listas/Lista5/dist/index.html"
+  base: "/projetoFrontEndWebJavascript/Listas/Lista5"
 })
